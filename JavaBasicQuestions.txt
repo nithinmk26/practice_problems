@@ -1,0 +1,34 @@
+Write a program which will accept a string and ask user to enter a character and replace the first and the last occurrence of that character in the input string by ‘*’. Occurrence of the character should be irrespective of the case i.e. uppercase / lowercase.
+Example-
+“Together we can achieve morE”
+Enter a character to perform operation:
+‘e’
+Output- “Tog*ther we can achieve mor*”
+
+
+
+Print only first character of the alternative word in the string
+Example- “Jack is Businessman and he is polite”
+Output-  “J B h p”
+
+Given a sentence which consists of alphabets [a-zA-Z], digits [0-9]Write a method which returns a string after reversing only the alphabets [a-zA-Z]
+Input :
+I watched the move on December 17 at 5pm
+Output :
+I dehctaw eht evom no rebmeceD 17 ta 5mp
+
+
+    Take a sentence as input and convert each even occurring word in that sentence to all capital.
+ex i/p: This is a great day
+   o/p: THIS is A great DAY
+
+
+
+Take two sentences and merge them together word wise [first try with equal length inputs then go for differen lengths]
+ex i/p 1: This is a great day
+   i/p 2: good luck team
+   o/p:This good is luck a team great day
+   
+   
+   
+   

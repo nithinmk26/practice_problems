@@ -1,0 +1,75 @@
+@Entity
+@Table(name = "user_contact")
+public class UserContact {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "contact_id")
+	private int contactId;
+	
+	private Long contactNumber;
+	
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name = "user_id")
+	private User user;
+	
+	
+	
+	
+@Entity
+@Table(name = "user_data",catalog = "mappings_practice")
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "user_id")
+	private int userId;
+	
+	private String userName;
+	
+	private String city;
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
+//	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
+	private List<UserContact> contactList;
+	
+	
+	
+	
+	
+@PostMapping("/register")
+	public ResponseEntity<User> registerPerson(@RequestBody User person){
+		for (UserContact iterable_element : person.getContactList()) {
+			iterable_element.setUser(person);
+		}
+		User userSaved = userRepository.save(person);
+		
+		return new ResponseEntity<>(userSaved,HttpStatus.CREATED);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+{
+	"userName":"Checthu",
+	"city":"Bangalore",
+	"contactList":[
+		{
+			"contactNumber":9113683980
+		},
+		{
+			"contactNumber":9113683989
+		},
+		{
+			"contactNumber":9113683988
+		}
+		]
+}

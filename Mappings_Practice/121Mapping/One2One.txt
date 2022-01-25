@@ -1,0 +1,46 @@
+use mappings_practice;
+
+show tables;
+
+drop database mappings_practice;
+
+desc passport_data;
+
+desc person_info;
+
+select  * from person_info;
+
+select  * from passport_data;
+
+
+
+@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "person_id")
+	private int personId;
+	
+	private String personName;
+	
+	private String personCity;
+	
+	@OneToOne(cascade = CascadeType.ALL)  ///mappedBy="person"   person is Person person in Passport class.
+//	@JoinColumn(name = "passport_id", referencedColumnName = "id")  //Creates new Column with Name passport_id (FK)
+	@JoinColumn(name = "person_id", referencedColumnName = "id")   // Maps but wont Create a Column      users (person_id) for Reference
+//	@JoinColumn(name = "passport_id")              @onetomany+@joincolumn(USerd to change columnName) //if not creates Person_passport_id
+	private Passport passport;
+	
+	
+	
+	
+		@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	
+	private String passportNumber;
+	
+	private LocalDate issuedDate;
+//	
+//	@OneToOne(cascade = CascadeType.ALL)   //OneToOne Bidirectional mapping   
+//	@JoinColumn(name = "person_id")        //Unidirectional --> No need of reference in both the Classes
+//	private Person person;
+//

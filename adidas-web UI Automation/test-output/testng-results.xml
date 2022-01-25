@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="72838" started-at="2021-06-18T18:20:26 IST" finished-at="2021-06-18T18:21:39 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="72838" started-at="2021-06-18T18:20:26 IST" finished-at="2021-06-18T18:21:39 IST">
+      <class name="adidas.adidas.EguestCheckout">
+        <test-method status="PASS" signature="setup()[pri:0, instance:adidas.adidas.EguestCheckout@3d921e20]" name="setup" is-config="true" duration-ms="4717" started-at="2021-06-18T18:20:26 IST" finished-at="2021-06-18T18:20:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testingEguestCheckout()[pri:0, instance:adidas.adidas.EguestCheckout@3d921e20]" name="testingEguestCheckout" duration-ms="66675" started-at="2021-06-18T18:20:31 IST" finished-at="2021-06-18T18:21:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testingEguestCheckout -->
+        <test-method status="PASS" signature="printingDetails()[pri:0, instance:adidas.adidas.EguestCheckout@3d921e20]" name="printingDetails" is-config="true" duration-ms="2" started-at="2021-06-18T18:21:38 IST" finished-at="2021-06-18T18:21:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- printingDetails -->
+        <test-method status="PASS" signature="closeMethod()[pri:0, instance:adidas.adidas.EguestCheckout@3d921e20]" name="closeMethod" is-config="true" duration-ms="1406" started-at="2021-06-18T18:21:38 IST" finished-at="2021-06-18T18:21:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeMethod -->
+      </class> <!-- adidas.adidas.EguestCheckout -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

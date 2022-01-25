@@ -1,0 +1,61 @@
+Elastic search ->search engine ,noSql database?
+Logstash-> log pipeline tool
+Kibana ->Visualisation UI layer
+
+
+
+STEP 1:
+RUN ELASTIC ENGINE:
+go to bin folder run elasticsearch.bat
+localhost:9200
+Step 2:
+For running kibana ,first need to give the elasti search enable(uncomment) in 
+kibana.yml in conf folder.
+go to bin folder run kibana.bat
+localhost:5601
+we can see kibana dashboard
+http://localhost:9200/_cat/indices (to find the indexes present in our kibana)
+//steps to create the custom index 
+go to kibana dashboard ->dev tools ->write the query to create the index
+PUT /<name_of index>
+{
+      "settings" : {
+         "index"  : {
+             "number_of_shards" :3,
+             "number_of_replicas" :2
+         }
+      }
+}
+//steps to create the documents in that index:
+POST /micorservicedummy/default/
+{
+"name":"event processing",
+"instructor":{
+"firstName":"devika",
+"lastName":"Siva"
+}
+
+}
+
+
+
+
+
+
+STEP 3:
+Give the path of log file in app.properties as logging.file.name= C:/Loggers/BookingService.log
+Give the path of your log files in seperate conf file in logstash bin folder.
+enter this in your conf file.
+input { 
+ 	file{
+	path => "C:/Loggers/BookingService.log"
+	start_position => "beginning"
+}
+
+}
+output {
+  elasticsearch { hosts => ["localhost:9200"] }
+  stdout { codec => rubydebug }
+}
+
+Run this file by giving ....\bin>logstash -f <filename>.conf

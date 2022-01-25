@@ -1,0 +1,77 @@
+Fibonacci Series in Java
+
+2) Prime Number Program in Java
+3) Palindrome Program in Java
+4) Factorial Program in Java
+5) Armstrong Number in Java
+6) How to Generate Random Number in Java
+7) How to Print Pattern in Java
+8) How to Compare Two Objects in Java
+9) How to Create Object in Java
+10) How to Print ASCII Value in Java
+Java Program to Add two Numbers
+Java Program to Check Even or Odd Number
+Java Program to add two binary numbers
+Java Program to add two complex numbers
+Java Program to Multiply two Numbers
+Java Program to check Leap Year
+Java Program to check whether input character is vowel or consonant
+Java Program to calculate compound interest
+Java Program to calculate simple interest
+Java Program to find quotient and remainder
+Java Program to calculate power of a number
+Java Program to display first 100 prime numbers
+Java Program to display prime numbers between 1 and 100 or 1 and n
+Java program to break integer into digits
+Java Program to check Prime Number
+Java Program to check if a given number is perfect square
+Java Program to find square root of a number without sqrt method
+Java Program to print Armstrong numbers between a given range
+Java Program to Find Sum of Natural Numbers
+Java Program to check if a number is Positive or Negative
+Java Program to generate Random Number
+Java Program to check Armstrong number
+Java Program to find GCD of two numbers
+Java Program to find Largest of three numbers
+Java Program to swap two numbers using bitwise operator
+Java Program to find smallest of three numbers using ternary operator
+Java Program to find largest of three numbers using ternary operator
+Java Program to display alternate prime numbers
+Java Program to display even numbers from 1 to n or 1 to 100
+Java Program to display odd numbers from 1 to n or 1 to 100
+Java Program to Find average of 3 numbers
+Java Program to Find HCF and LCM of Two Numbers
+Java Program to Calculate Area of Rectangle
+Java Program to Calculate Area of Square
+Java Program to Calculate the area of Triangle
+Java Program to Calculate Area and Circumference of Circle
+Java Program to display Fibonacci series using loops
+Java Program to find Factorial using loops
+Java Program to make a calculator using switch case
+Java Program to Calculate grades of Student
+Java Program to perform Arithmetic Operation using Method Overloading
+Java Octal to Decimal conversion
+Java Program to Convert Decimal to Octal
+Java hexadecimal to decimal conversion
+Java Program to convert decimal to hexadecimal
+Java binary to octal conversion
+Java String to boolean
+Java program to convert boolean to String
+Java int to char conversion
+Java char to int conversion
+Java char to string conversion
+Java long to int conversion
+Java int to long conversion
+Java Program to Convert Decimal to Binary
+Java Program to convert binary to Decimal
+Java Program to find ASCII value of a character
+Java program for String to int conversion
+Java program to convert int to String
+Java program for string to double conversion
+Java program to convert double to String
+Java program to convert String to long
+Java program to convert long to String
+
+
+
+

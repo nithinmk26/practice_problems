@@ -1,0 +1,53 @@
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('1', 'Idli', '50', 'veg', '10');
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('2', 'Vada', '40', 'veg', '40');
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('3', 'Noodels', '80', 'chiniese', '20');
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('4', 'Kabab', '85', 'non-veg', '45');
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('5', 'biriyani', '99', 'non-veg', '2');
+INSERT INTO `omf_restaurant`.`food` (`food_id`, `food_name`, `food_price`, `food_type`, `quantity`) VALUES ('6', 'chitranna', '15', 'veg', '55');
+
+
+
+
+
+
+Location-------------------
+
+INSERT INTO `omf_restaurant`.`location` (`location_id`, `address`, `lattitude`, `longitude`) VALUES ('1', 'RR Nagar', '12.915224', '77.502156');
+INSERT INTO `omf_restaurant`.`location` (`location_id`, `address`, `lattitude`, `longitude`) VALUES ('2', 'RR Nagar', '12.906776', '77.499557');
+INSERT INTO `omf_restaurant`.`location` (`location_id`, `address`, `lattitude`, `longitude`) VALUES ('3', 'Rajainagar', '12.990978', '77.557891');
+INSERT INTO `omf_restaurant`.`location` (`location_id`, `address`, `lattitude`, `longitude`) VALUES ('4', 'New BEL Road', '13.027489', '77.571813');
+INSERT INTO `omf_restaurant`.`location` (`location_id`, `address`, `lattitude`, `longitude`) VALUES ('5', 'Nelamangala Kunigal High way', '13.087615', '77.374138');
+
+
+Restuarant--------------------
+
+INSERT INTO `omf_restaurant`.`restuarant` (`restaurant_id`, `locality`, `min_order_amount`, `offer_percent`, `phone_number`, `rating`, `restaurant_name`, `time_perkm`, `location`) VALUES ('1', 'RR Nagar', '240', '20', '9113689380', '4.8', 'Global Village BAck Gate Nandas kitchen', '5', '1');
+INSERT INTO `omf_restaurant`.`restuarant` (`restaurant_id`, `locality`, `min_order_amount`, `offer_percent`, `phone_number`, `rating`, `restaurant_name`, `time_perkm`, `location`) VALUES ('2', 'RR Nagar', '200', '10', '9482661843', '3.6', 'Srinivas Restuarant', '9', '2');
+INSERT INTO `omf_restaurant`.`restuarant` (`restaurant_id`, `locality`, `min_order_amount`, `offer_percent`, `phone_number`, `rating`, `restaurant_name`, `time_perkm`, `location`) VALUES ('3', 'Rajajinagar', '100', '3', '9988998888', '5', 'Navrang bar and Resturant', '10', '3');
+INSERT INTO `omf_restaurant`.`restuarant` (`restaurant_id`, `locality`, `min_order_amount`, `offer_percent`, `phone_number`, `rating`, `restaurant_name`, `time_perkm`, `location`) VALUES ('4', 'BEL Raod', '350', '40', '7788778899', '4', 'Gilleys Resto Bar', '3', '4');
+INSERT INTO `omf_restaurant`.`restuarant` (`restaurant_id`, `locality`, `min_order_amount`, `offer_percent`, `phone_number`, `rating`, `restaurant_name`, `time_perkm`, `location`) VALUES ('5', 'Nelmangala', '500', '0', '6677889988', '5', 'Nanda\'s Dhaba', '2', '5');
+
+
+Review----------------
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('1', 'Very Good ', '3', '123456788', '1');
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('2', 'Hyginic', '4', '9876543', '1');
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('3', 'Clean', '2', '98765432', '2');
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('4', 'Superb Service', '4', '12345678', '3');
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('5', 'BAd Service', '2', '8765432', '4');
+INSERT INTO `omf_restaurant`.`review` (`review_id`, `comment`, `rating`, `user_id`, `restaurant`) VALUES ('6', 'Not BAd', '3', '8765432345', '5');
+
+
+insert into omf_restaurant.restaurant_food values(1,1);
+insert into omf_restaurant.restaurant_food values(1,3);
+insert into omf_restaurant.restaurant_food values(1,5);
+insert into omf_restaurant.restaurant_food values(1,6);
+insert into omf_restaurant.restaurant_food values(2,2);
+insert into omf_restaurant.restaurant_food values(2,4);
+insert into omf_restaurant.restaurant_food values(2,5);
+insert into omf_restaurant.restaurant_food values(3,1);
+insert into omf_restaurant.restaurant_food values(3,6);
+insert into omf_restaurant.restaurant_food values(4,6);
+insert into omf_restaurant.restaurant_food values(4,2);
+insert into omf_restaurant.restaurant_food values(4,3);
+insert into omf_restaurant.restaurant_food values(5,4);
+insert into omf_restaurant.restaurant_food values(5,2);

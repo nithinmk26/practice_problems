@@ -1,0 +1,40 @@
+version: '3'
+services:
+  springboot-webapp:
+    image: nithinmk26/userservice
+    ports:
+    - 9500:9500
+    depends_on:
+    - kafka-server
+    networks:
+    - restaurant-app
+    logging:
+      driver: json-file
+  springboot-webapp:
+    image: nithinmk26/orderservice
+    ports:
+    - 8084:8084
+    depends_on:
+    - kafka-server
+    networks:
+    - restaurant-app
+    logging:
+      driver: json-file
+ 
+  kafka-server:
+    image: michaeldqin/kafka
+    hostname: kafka-server
+    ports:
+    - "2181:2181"
+    - "9092:9092"
+    environment:
+    - ADVERTISED_LISTENERS=PLAINTEXT://kafka-server:9092    
+    volumes:
+    - ${HOME}/Docker/log:/opt/kafka_2.12-1.0.0/log
+    networks:
+    - restaurant-app
+    logging:
+      driver: json-file
+networks:
+  restaurant-app:
+    driver: bridge

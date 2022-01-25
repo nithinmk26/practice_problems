@@ -1,0 +1,86 @@
+Docker commands---
+
+
+1 : 
+sudo apt-get install openjdk-8-jdk
+java -version
+
+2 : 
+sudo apt-get install maven
+maven -version
+
+
+3: Tranfer Project to VM (empty target folder)
+
+4: mvn clean install ( Build the jar config)
+
+5: create a Dockerfile in project folder
+FROM openjdk:alpine
+ADD target/*.jar /app.jar
+EXPOSE 8081
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+6:
+sudo docker build -t imgname:tagname  (sudo docker -t gsignin:latest)
+
+7:
+sudo docker tag imgname:tagname repo/imgname:tagname (sudo docker tag gsignin:latest nithinmk26/gsignin:latest)
+
+8:
+Create an Account in Docker HUB
+
+9:
+sudo docker login -u username -p password
+
+10:
+sudo docker push repo/imgname:tagname
+
+11: Check all the images built
+sudo docker images
+
+12:
+sudo docker pull repo/imgname:tagname
+
+13:
+sudo docker run -d -p 8080:8080 repo/imgname:tagname (8080:8080  dockerPort:application prop port)
+
+14:  To check running images
+sudo docker ps -a
+
+15:stop running image
+sudo docker stop [container iD]
+
+16:  Remove image
+sudo docker rm [container iD]
+
+17: list of images
+sudo docker ps
+
+
+ssh Microservice@tomotodelivery.eastus.cloudapp.azure.com
+
+
+mvn install -Dmaven.test.skip=true
+sudo docker build -t userservice .
+
+sudo docker network create config-platform
+sudo docker container run --network config-platform --name config -p 8880:8880 -d config
+
+
+
+Mindtree VM
+829264494581-34esr3t3hr74247h49jomdnd7iquku7n.apps.googleusercontent.com
+Y-l8JHQtvEB3JcJ5mrhiVHXI
+
+
+mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true
+sonar-runner
+
+
+
+netstat -ano | findstr 9092
+taskkill /F /PID 5216
+
+
+
+

@@ -1,0 +1,27 @@
+Download Kfka
+ https://www.apache.org/dyn/closer.cgi?path=/kafka/2.4.1/kafka_2.13-2.4.1.tgz
+ 
+ 
+ Commands for excution
+ 
+ Start Zookeeper server
+ 1: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+ 
+ 
+ 
+ Start the Kafka Server:
+ 2: .\bin\windows\kafka-server-start.bat .\config\server.properties 
+ 
+ 
+ Create Topic
+ 3: .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic nandaTopic
+ 
+ Create one more topic
+ 4: .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic gouthamiTopic
+ 
+ Producer
+ 5: .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic nandaTopic
+ 
+ Consumer
+ 6: .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic nandaTopic
+ 

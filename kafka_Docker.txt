@@ -1,0 +1,56 @@
+Kafka commands in cmd
+
+--start zookeeper in cmd by writing this C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+--start kafka in another cmd by writing this C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+--create kafka topic in another cmd by writing this C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic TestTopic
+
+--check list of topics in another cmd by writing this C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\kafka-topics.bat --list --zookeeper localhost:2181 
+
+-- start a producer by writing this C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic TestTopic
+
+--checking in consumer bat in another cmd C:\Users\M1055920\Downloads\kafka_2.12-2.0.0>
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic TestTopic --from-beginning
+
+
+*******************************************************************************************************
+Kafka commands in vm
+
+--Create a directory to contain the docker-console.yml file
+
+--run these commands
+->sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+->sudo chmod +x /usr/local/bin/docker-compose
+
+->sudo docker-compose --version
+​
+->sudo docker-compose -f docker-compose.yml  up -d
+
+->sudo docker ps
+
+->sudo docker exec -it kafka /bin/sh
+
+--cd opt
+--cd kafka
+--cd bin
+
+--Creating topic
+kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic Review
+
+--Checking list of topics
+kafka-topics.sh --list --zookeeper zookeeper:2181
+
+--Running a consumer
+->cd windows
+->kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order --from-beginning
+
+
+--Creating container of the docker image with kafka embedded in it(Note:It should run in host mode)
+sudo docker run -d -p <port-number>:<port-number> --network=host <tag-name>/<image-name>:latest .

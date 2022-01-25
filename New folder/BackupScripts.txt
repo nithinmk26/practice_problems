@@ -1,0 +1,243 @@
+-----Taking BAckup
+ 
+SET serveroutput on;
+SET echo on;
+SPOOL BACKUP_IN_4902_v1.log;
+ALTER SESSION SET current_schema=MBS;
+SET DEFINE OFF;
+
+CREATE TABLE Table_name AS SELECT * FROM source_table; --wriite query to take reault as data
+
+
+COMMIT;
+SPOOL OFF;
+
+-------Cursor PLSQL
+
+SET SERVEROUTPUT ON;
+SET ECHO ON;
+SPOOL InsertScript.LOG;
+ALTER SESSION SET CURRENT_SCHEMA=MBS;
+SET DEFINE OFF;
+
+DECLARE
+
+v_insrt_cnt				NUMBER := 0;
+v_tot_insrt_cnt			NUMBER := 0;
+v_err_cnt				NUMBER := 0;
+v_tot_err_cnt			NUMBER := 0;
+t1                      timestamp;
+t2                      timestamp;
+
+   
+TYPE all_cols IS RECORD
+   (
+      col1   	table_name.col1%TYPE,
+      col2        	table_name.col2%TYPE,
+	  col3				table_name.col3%TYPE,
+	  col4				table_name.col4%TYPE,
+	  col5					table_name.col5%TYPE
+   );
+
+TYPE loyalty_info_t IS TABLE OF all_cols;
+
+loyalty_info_arr loyalty_info_t;
+
+dml_errors 			EXCEPTION;
+PRAGMA exception_init (dml_errors, -24381);
+
+CURSOR cur_recipient 
+IS 
+	SELECT pkg_loyalty.fn_GenerateMemberId('GLOBAL','ADI','IN') AS col1,col2,col3 AS isourceid,col4 AS istoreid,col5
+	FROM temp_table tmp
+	WHERE NOT EXISTS (SELECT 1 FROM table adi
+                    WHERE adi.col1 = tmp.col1 
+					AND colu = 58);
+	
+BEGIN
+t1 := systimestamp;
+
+OPEN cur_recipient;
+LOOP	
+BEGIN
+FETCH cur_recipient
+BULK COLLECT INTO loyalty_info_arr	
+LIMIT 1000;
+
+FORALL i IN 1 .. loyalty_info_arr.LAST SAVE EXCEPTIONS
+
+INSERT INTO table (fields) VALUES (loyalty_info_arr(i).col1,  values);
+
+v_insrt_cnt := SQL%ROWCOUNT;
+
+
+EXCEPTION
+WHEN dml_errors THEN
+	v_err_cnt := SQL%BULK_EXCEPTIONS.COUNT;
+	dbms_output.put_line('Number of errors is ' || v_err_cnt);
+	FOR i IN 1..v_err_cnt LOOP
+		dbms_output.put_line('Oracle error is ' || SQLERRM(-SQL%BULK_EXCEPTIONS(i).ERROR_CODE));
+    END LOOP;
+END; 
+
+COMMIT;
+
+v_tot_insrt_cnt := v_tot_insrt_cnt + v_insrt_cnt;
+v_tot_err_cnt := v_tot_err_cnt + v_err_cnt;
+
+EXIT WHEN cur_recipient%NOTFOUND;
+END LOOP;
+t2 := systimestamp;
+
+dbms_output.put_line('No.of records inserted into table for IN ADI are:  '||v_tot_insrt_cnt);
+dbms_output.put_line('No.of errors encountered while inserting into  table for IN ADI are ' || v_tot_err_cnt);
+dbms_output.put_line('Start: '||t1);
+dbms_output.put_line(' End: '||t2);
+dbms_output.put_line('Elapsed Seconds: '||TO_CHAR(t2-t1, 'SSSS.FF'));
+
+CLOSE cur_recipient;
+COMMIT;
+
+END;
+/
+
+SPOOL OFF;
+
+--Values as aliasing
+CASE WHEN IGENDER >0 THEN '1'  ELSE NULL END AS bhasprofilegender,
+	CASE WHEN SFIRSTNAME IS NOT NULL THEN '1' ELSE NULL END  AS bhasprofilefirstname
+
+------Two table joining conditions apply seprately
+CREATE TABLE CBD_MIGRATE_RBKAR_DBCCERO3640
+AS 
+WITH t1 AS
+(
+select * from table where conditions;
+),
+t2 AS
+(
+select * from table where conditions;
+)
+SELECT t1.col,
+  t1.col,
+  t1.col,
+  t1.col,
+  t1.col,
+  t1.col,
+  t2.col,
+  t2.col,
+  t2.col
+FROM t1 
+JOIN t2 
+ON t1.col = t2.col; 
+
+
+-----Interview Questions
+
+class Parent{
+    public  void print(){
+        System.out.println("Parent ");
+    }
+}
+class Child extends Parent{
+    public  void print(){
+        System.out.println("Child ");
+    }
+}
+
+public class MyClass {
+    public void main(String args[]) {
+      Parent p = new Child();
+      p.print();
+    }
+}
+
+
+
+
+
+public class MyClass {
+   
+    public static void main(String args[]) {
+    String s = null;
+    String name = "Nagaraj";
+   if(s.equals(name)){
+       System.out.println("Equals");
+   }
+   else{
+        System.out.println("Not Equals");
+   }
+    
+}
+}
+
+3
+
+public interface I1 {
+     default String getGreeting() {
+        return "Good Morning!";
+     }
+}
+
+public interface I2 {
+    default String getGreeting() {
+        return "Good Night!";
+    }
+}
+
+public class C1 implements I1, I2 {       
+    psvm(s[] args){
+	
+	}
+}
+
+
+Finding the postion of index
+[1,2,3,3,3,3,4,4,4,4,5,5]
+
+
+
+oops concepts.? over loading riding
+How can we access private methods outside the class.?
+HashSet implementations..
+TreeMap timecomplexity
+
+
+hashMap -> 
+Employee e = new E(1, "Nagaraj");
+Employee e1 = new E(1, "Nagaraj");
+Set<Employee> employees = new Set<>();
+employees.add(e);
+employees.add(e1);
+
+
+
+Hash set stores two objects..?
+
+Compare compareTo
+
+listOFEmployees convert to employees based on department
+Employee{
+id;
+name;
+dept;
+}
+
+
+employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+
+
+
+Class A
+protected void m1(){
+}
+}
+
+Class B extends A {
+public void m1(){
+}
+}
+
+
+String s1 = "I know java I know python";
+
